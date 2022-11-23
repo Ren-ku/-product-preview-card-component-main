@@ -1,0 +1,161 @@
+:root{
+    --drkcyan: hsl(158, 36%, 37%);
+    --evdrkcyan: hsl(158, 36%, 17%);
+    --cream: hsl(30, 38%, 92%);
+
+    --vdrkblue: hsl(212, 21%, 14%);
+    --drkgrayishblu: hsl(228, 12%, 48%);
+   
+
+    --ff-main: "Montserrat", sans-serif;
+    --ff-accent: "Fraunces", serif;
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+}
+
+/*
+  Josh's Custom CSS Reset: https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  html, body {
+    height: 100%;
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  #root, #__next {
+    isolation: isolate;
+  }
+
+/* General styling */
+
+body {
+    font-family: var(--ff-main);
+    font-weight: var(--fw-regular);
+    font-size: 0.875rem;
+    color: var(--drkgrayishblu);
+    background-color: var(--cream);
+    
+    display: grid;
+    place-content: center;
+    margin: 1rem;
+    min-height: 100vh;
+}
+
+/* utilities */
+
+ .flex-column {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+ }
+
+ .sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+ }
+
+/* product styles*/
+
+.product {
+  display: grid;
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  max-width: 600px;
+}
+
+@media (min-width: 600px) {
+  .product {
+    grid-template-columns: 1fr 1fr;
+
+  }
+
+}
+
+
+.product__content {
+  display: grid;
+  gap: 1rem;
+  padding: 2rem;
+  line-height: 0,125rem;
+}
+
+
+.product__category{
+  font-size: 0.8125rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.product__title{
+  font-size: 2rem;
+  font-family: var(--ff-accent);
+  color: var(--vdrkblue);
+  line-height: 30px;
+  }
+
+  .current__price{
+    font-size: 2rem;
+    font-family: var(--ff-accent);
+    font-weight: var(--fw-bold);
+    color: var(--drkcyan);
+  }
+
+  .old__price{
+    text-decoration: line-through;
+  }
+
+  /* Button */
+ 
+  .button__cart {
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+  
+    border: 0;
+    border-radius: 0.5rem;
+    padding: 0.75em 1.5em;
+    background-color: var(--drkcyan);
+    color: white;
+    font-weight: var(--fw-bold);
+    font-size: 0.925rem;
+    transition: 300ms;
+    transition-timing-function: ease-in;
+ }
+
+ .button__cart:is(:hover, :focus){
+  background-color: var(--evdrkcyan);
+ }
+
+
+/* Frontend mentor attribution classes*/
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
